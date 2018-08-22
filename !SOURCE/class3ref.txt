@@ -1,0 +1,37 @@
+localforage.config({
+    driver      : localforage.WEBSQL,
+    name        : 'benapp',
+    size        : 14980736,
+    storeName   : 'benapp',
+    description : 'benapp'
+});
+
+localforage.setItem('benapp', data).then(function (value) {
+
+}).catch(function(err) {
+    console.log(err);
+});
+
+localforage.getItem('benapp').then(function(benappValue) {
+    if (typeof benappValue !== 'undefined' && benappValue !== null) {
+
+    } else {
+
+    }
+}).catch(function(err) {
+    console.log(err);
+});
+
+
+
+
+
+var listItems;
+$("#listResults").html(_.template($("#listTemplate").html(), listItems));
+
+<script id="listTemplate" type="text/template">
+    <% _.each(listItems, function (li) { %>
+        <%= li.value %>
+    <% }); %>
+</script>
+<div id="listResults"></div>
